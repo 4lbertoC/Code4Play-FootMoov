@@ -68,7 +68,7 @@ namespace FootMoovTeam {
 		private bool isFrontTap = false;
 
 		public Connector connector;
-		public MorseFootMoovListener listener; // = new DemoFootMoovListener();
+		public DemoFootMoovListener listener;
 		private event OnFrontTapEvent OnFrontTap;
 		private event OnBackTapEvent OnBackTap;
 
