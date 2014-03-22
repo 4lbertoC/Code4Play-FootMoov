@@ -60,20 +60,15 @@ namespace FootMoovTeam {
 	}
 
 	public class FootMoovAdapter : MonoBehaviour {
-
-		// Last values
-		private float lastBackTapValue = 0f;
-		private float lastFrontTapValue = 0f;
 		
 		private PressureButton backButton;
 		private PressureButton frontButton;
 
-		// States
 		private bool isBackTap = false;
 		private bool isFrontTap = false;
 
 		public Connector connector;
-		public FootMoovListener listener = new DemoFootMoovListener();
+		public MorseFootMoovListener listener; // = new DemoFootMoovListener();
 		private event OnFrontTapEvent OnFrontTap;
 		private event OnBackTapEvent OnBackTap;
 
@@ -109,59 +104,5 @@ namespace FootMoovTeam {
 				isFrontTap = false;
 			}
 		}
-		
-//		private void UpdateBackTap() {
-//			float currentPression = connector.pression1;
-//			float lastPression = lastBackTapValue;
-//			bool isTap = isFrontTap;
-//			
-//			if (currentPression > TAP_ACTIVATION_THRESHOLD) {
-//				if((currentPression - lastPression) > TAP_DELTA_THRESHOLD &&
-//				   !isFrontTap && OnFrontTap != null) {
-//					isTap = true;
-//					OnFrontTap (this);
-//				}
-//			} else if (currentPression < TAP_ACTIVATION_THRESHOLD) {
-//				isFrontTap = false;
-//			}
-//			lastPression = currentPression;
-//			
-//			lastFrontTapValue = lastPression;
-//			isFrontTap = isTap;
-//		}
-//		
-//		private void UpdateFrontTap() {
-//			float currentPression = connector.pression2;
-//			float lastPression = lastFrontTapValue;
-//			bool isTap = isFrontTap;
-//
-//			if (currentPression > TAP_ACTIVATION_THRESHOLD) {
-//				if((currentPression - lastPression) > TAP_DELTA_THRESHOLD &&
-//				   !isFrontTap && OnFrontTap != null) {
-//					isTap = true;
-//					OnFrontTap (this);
-//				}
-//			} else if (currentPression < TAP_ACTIVATION_THRESHOLD) {
-//				isFrontTap = false;
-//			}
-//			lastPression = currentPression;
-//
-//			lastFrontTapValue = lastPression;
-//			isFrontTap = isTap;
-//		}
-
-//		private void UpdateTap(float currentPression, float lastPression, bool isTap) {
-//			if (currentPression > TAP_ACTIVATION_THRESHOLD) {
-////				print ("frontTap!");
-//				if((currentPression - lastPression) > TAP_DELTA_THRESHOLD &&
-//				   !isFrontTap && OnFrontTap != null) {
-//					isTap = true;
-//					OnFrontTap (this);
-//				}
-//			} else if (currentPression < TAP_ACTIVATION_THRESHOLD) {
-//				isFrontTap = false;
-//			}
-//			lastPression = currentPression;
-//		}
 	}
 }
